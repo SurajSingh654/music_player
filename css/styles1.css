@@ -1,0 +1,102 @@
+#title {
+  background-color: #c8c6a7;
+}
+
+body {
+  background-color: #536162;
+}
+
+.fa-compact-disc {
+  padding-left: 20px;
+}
+
+.fa-compact-disc:hover {
+  color: #17b978;
+}
+
+.vertical-navbar-icon, .vertical-navbar-text{
+  padding: 10px;
+  color:grey;
+}
+
+.vertical-navbar-text:hover, .vertical-navbar-icon:hover{
+  color: #17b978;
+}
+
+.main-list {
+  padding: 0 15%;
+  color: #17b978;
+}
+
+.vertical-navbar{
+  float: left;
+  margin-left: 10px;
+  }
+
+#carouselExampleSlidesOnly {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.carousel-control-prev {
+  margin-left: 350px;
+}
+
+.carousel-control-next {
+  margin-right: 40px;
+}
+.song-row{
+  padding: 40px 30px;
+}
+.image-slide {
+  border-radius: 3%;
+  width: 700px;
+  height: 300px;
+}
+.card-body{
+  padding: 0;
+  margin: 0;
+  /* background-color: #536162; */
+  text-align: center;
+  color: white;
+}
+
+h5{
+  color: white;
+}
+.card{
+  background-color: #536162;
+}
+
+.card-image{
+  height: 120px;
+  border-radius: 10%;
+  margin: auto 60px;
+}
+.card-image:hover{
+  opacity: 0.8;
+}
+
+.search-bar {
+  padding-right: 5%;
+}
+
+.footer{
+  background-color: #393e46;
+  text-align: center;
+  padding: 10px;
+}
+
+.column{
+  width: 25%;
+  padding: 10px;
+  float: left;
+}
+
+.footer-text:hover, .footer-icon:hover{
+  color: #c8c6a7;
+}
+
+.footer-text{
+  color: #212121;
+}
