@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title></title>
+    <script src="https://kit.fontawesome.com/bd00b0583a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="music_container">
+        <h2 id="title">Hanuman Chalisa</h2>
+        <h4 id="artist">Gulshan Kumar</h4>
+        <div class="image_container">
+          <img src="image\image_12.jpg" alt="">
+        </div>
+        <audio src="songs\song_12.mp3"></audio>
+        <div class="music_control">
+          <i class="fas fa-backward" id="prev" target="Previous" ></i>
+          <i class="fas fa-play main_button" id="play" target="Play" ></i>
+          <i class="fas fa-forward" id="next" target="Next" ></i>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const music = document.querySelector("audio");
+      const img = document.querySelector("img");
+      const play = document.getElementById("play");
+      const artist = document.getElementById("artist");
+      const title = document.getElementById("title");
+      const prev = document.getElementById("prev");
+      const next = document.getElementById("next");
+
+      const songs = [
+        {
+          name1:"song_1",
+          name2:"image_1",
+          title:"Sayiyaan Ji",
+          artist:"Honey Singh"
+        },
+        {
+          name1:"song_2",
+          name2:"image_2",
+          title:"Panghat",
+          artist:"Sachin Jigar"
+        },
+        {
+          name1:"song_3",
+          name2:"image_3",
+          title:"Shor Machega",
+          artist:"Honey Singh"
+        },
+        {
+          name1:"song_4",
+          name2:"image_4",
+          title:"Rabba Meher Kari",
+          artist:"Darshan Raval"
+        },
+        {
+          name1:"song_5",
+          name2:"image_5",
+          title:"Chor Denge",
+          artist:"Nora Fatehi"
+        },
+        {
+          name1:"song_6",
+          name2:"image_6",
+          title:"Taroon Ka Sheher",
+          artist:"Neha Kakkar"
+        },
+        {
+          name1:"song_7",
+          name2:"image_7",
+          title:"Meri Ashiqui",
+          artist:"Jubin Nautiyal"
+        },
+        {
+          name1:"song_8",
+          name2:"image_8",
+          title:"Pal Pal Dil K Pass",
+          artist:"Arijit Singh"
+        },
+        {
+          name1:"song_9",
+          name2:"image_9",
+          title:"Ye Sham Mastani",
+          artist:"Kishore Kumar"
+        },
+        {
+          name1:"song_10",
+          name2:"image_10",
+          title:"Pal Pal Dil K Pass",
+          artist:"Kishore Kumar"
+        },
+        {
+          name1:"song_11",
+          name2:"image_11",
+          title:"OO Sathi Re",
+          artist:"Kishore Kumar"
+        },
+        {
+          name1:"song_12",
+          name2:"image_12",
+          title:"Hanuman Chalisa",
+          artist:"Gulshan Kumar"
+        },
+      ];
+        let isPlaying = false;
+      const playMusic = () => {
+        isPlaying= true;
+        music.play();
+        play.classList.replace("fa-play","fa-pause");
+        img.classList.add("anime");
+      };
+
+      const pauseMusic = () => {
+        isPlaying= false;
+        music.pause();
+        play.classList.replace("fa-pause","fa-play");
+        img.classList.remove("anime");
+      };
+
+      play.addEventListener("click", () => {
+        isPlaying ? pauseMusic() : playMusic();
+      } );
+
+      const loadSong = (songs) => {
+        title.textContent = songs.title;
+        artist.textContent = songs.artist;
+        music.src = "songs/" + songs.name1 +".mp3";
+        img.src = "image/" + songs.name2 + ".jpg";
+      };
+
+         index = 0;
+         const nextSong = () =>{
+           index = (index+1)%songs.length;
+           loadSong(songs[index]);
+           playMusic();
+         };
+         const prevSong = () =>{
+           index = (index-1+songs.length)%songs.length;
+           loadSong(songs[index]);
+           playMusic();
+         };
+         next.addEventListener("click",nextSong);
+         prev.addEventListener("click",prevSong);
+    </script>
+  </body>
+</html>
